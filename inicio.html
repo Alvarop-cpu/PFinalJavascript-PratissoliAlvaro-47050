@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Fitness</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <header>
+        <p class="titulo">
+            Bienvenidos a Market Fitness
+        </p>
+        <p class="introduccion">
+            Aca vas a poder encontrar productos relacionados con el Fitness, suplementos, articulos personales, etc.
+        </p>
+    </header>
+    <main>
+        <input id="inputBuscar" type="text" placeholder="Buscar productos..."/>
+        <div id="productos">
+            <!-- Aca van los productos (catalogo) -->
+        </div>
+    </main>
+    <section>
+        <h1>
+            <span id="cantidadProductos">0</span>
+        </h1>
+        <div id="carrito">
+
+        </div>
+        <h2>
+            Total: $ <span id="totalCarrito"> 0 </span>
+            <a href="#" id="botonComprar" class="boton">comprar</a>
+        </h2>
+    </section>
+    <script src="carrito.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+</html>
