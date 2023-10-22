@@ -1,0 +1,163 @@
+[
+    {
+        "id": 1,
+        "nombre": "Whey protein Star",
+        "precio": 9.195,
+        "categoria": "Suplementos", 
+        "imagen": "prote.png"
+    },
+    {
+        "id": 2,
+        "nombre": "Creatina MonoH Star",
+        "precio": 15.627,
+        "categoria": "Suplementos", 
+        "imagen": "creatinaS.png"
+    },
+    {
+        "id": 3,
+        "nombre": "Amino BCAA+ Star",
+        "precio": 8.001,
+        "categoria": "Suplementos", 
+        "imagen": "bcaa.png"
+    },
+    {
+        "id": 4,
+        "nombre": "Ultra mass Ena",
+        "precio": 8.701,
+        "categoria": "Suplementos", 
+        "imagen": "PreE.png"
+    },
+    {
+        "id": 5,
+        "nombre": "Creatina Micronizada Ena",
+        "precio": 17.721,
+        "categoria": "Suplementos", 
+        "imagen": "creatina.png"
+    },
+    {
+        "id": 6,
+        "nombre": "Whey protein Ena",
+        "precio": 11.342,
+        "categoria": "Suplementos", 
+        "imagen": "proteE.png"
+    },
+    {
+        "id": 7,
+        "nombre": "Pre entreno ena",
+        "precio": 8.623,
+        "categoria": "Suplementos", 
+        "imagen": "PreEE.png"
+    },
+    {
+        "id": 8,
+        "nombre": "AminoFull Ena",
+        "precio": 4.739,
+        "categoria": "Suplementos", 
+        "imagen": "AminoE.png"
+    },
+    {
+        "id": 9,
+        "nombre": "Banda funcional T-Alta",
+        "precio": 1.959,
+        "categoria": "Equipamientos",
+        "imagen": "bandafuncional.jpeg"
+    },
+    {
+        "id": 10,
+        "nombre": "Pack bandas",
+        "precio": 7.324,
+        "categoria": "Equipamientos",
+        "imagen": "packBandas.jpeg"
+    },
+    {
+        "id": 11,
+        "nombre": "Push up",
+        "precio": 3.624,
+        "categoria": "Equipamientos",
+        "imagen": "push-up.jpeg"
+    },
+    {
+        "id": 12,
+        "nombre": "Pull up Bar",
+        "precio": 43.240,
+        "categoria": "Equipamientos",
+        "imagen": "pullUpBar.jpeg"
+    },
+    {
+        "id": 13,
+        "nombre": "Mancuernas Hexagonales",
+        "precio": 2.500,
+        "categoria00": "Equipamientos",
+        "imagen": "mancuernashexagonales.jpeg"
+    },
+    {
+        "id": 14,
+        "nombre": "Pelota fit + inf",
+        "precio": 5.540,
+        "categoria": "Equipamientos",
+        "imagen": "pelotaInflador.jpeg"
+    },
+    {
+        "id": 15,
+        "nombre": "Abs mat",
+        "precio": 6.859,
+        "categoria": "Equipamientos",
+        "imagen": "abs.jpeg"
+    },
+    {
+        "id": 16,
+        "nombre": "Medias Shark",
+        "precio": 2.199,
+        "categoria": "Indumentaria",
+        "imagen": "Medias.webp"
+    },
+    {
+        "id": 17,
+        "nombre": "Pantalon Team blood N",
+        "precio": 9.499,
+        "categoria": "Indumentaria",
+        "imagen": "PantalonN.webp"
+    },
+    {
+        "id": 18,
+        "nombre": "Pantalon Discipline A",
+        "precio": 9.499,
+        "categoria": "Indumentaria",
+        "imagen": "PantalonA.webp"
+    },
+    {
+        "id": 19,
+        "nombre": "Overzise shark Verde militar",
+        "precio": 11.999,
+        "categoria": "Indumentaria",
+        "imagen": "OverVerde.webp"
+    },
+    {
+        "id": 20,
+        "nombre": "Overzise shark Blanca",
+        "precio": 14.999,
+        "categoria": "Indumentaria",
+        "imagen": "OverBlanca.webp"
+    },
+    {
+        "id": 21,
+        "nombre": "Overzise shark Crudo",
+        "precio": 11.999,
+        "categoria": "Indumentaria",
+        "imagen": "OverCruda.webp"
+    },
+    {
+        "id": 22,
+        "nombre": "Musculosa strong shark negra",
+        "precio": 9.999,
+        "categoria": "Indumentaria",
+        "imagen": "MuscuNegra.webp"
+    },
+    {
+        "id": 23,
+        "nombre": "Musculosa abierta shark gris",
+        "precio": 8.499,
+        "categoria": "Indumentaria",
+        "imagen": "MuscuGris.webp"
+    }
+]

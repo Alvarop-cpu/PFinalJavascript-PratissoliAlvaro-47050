@@ -11,20 +11,15 @@ class Producto {
   class BaseDeDatos {
     constructor() {
       this.productos = [];
-      this.agregarRegistro(1, "Whey protein Star", 9.195, "Suplementos", "prote.png");
-      this.agregarRegistro(2, "Creatina MonoH Star", 15.627, "Suplementos", "creatinaS.png");
-      this.agregarRegistro(3, "Amino BCAA+ Star", 8.001, "Suplementos", "bcaa.png");
-      this.agregarRegistro(4, "Mutant mass Ena", 8.701, "Suplementos", "PreE.png");
-      this.agregarRegistro(5, "Creatina Micronizada Ena", 17.721, "Suplementos", "creatina.png");
-      this.agregarRegistro(6, "Whey protein Ena", 11.342, "Suplementos", "proteE.png");
-      this.agregarRegistro(7, "Pre entreno Ena", 8.623, "Suplementos", "PreEE.png");
-      this.agregarRegistro(8, "Aminoacidos Ena", 4.739, "Suplementos", "AminoE.png");
+      this.cargarRegistros();
     }
-  
-    agregarRegistro(id, nombre, precio, categoria, imagen) {
-      const producto = new Producto(id, nombre, precio, categoria, imagen);
-      this.productos.push(producto);
+
+    async cargarRegistros() {
+      const resultado = await fetch("./js/productos.json");
+      this.productos = await resultado.json();
+      cargarProductos(this.productos);
     }
+
     traerRegistros() {
       return this.productos;
     }
@@ -34,6 +29,11 @@ class Producto {
     registrosPorNombre(palabra) {
       return this.productos.filter((producto) =>
         producto.nombre.toLowerCase().includes(palabra.toLowerCase())
+      );
+    }
+    registrosPorCategoria(categoria) {
+      return this.productos.filter((producto) =>
+      producto.categoria == categoria
       );
     }
   }
@@ -78,6 +78,13 @@ class Producto {
       localStorage.setItem("carrito", JSON.stringify(this.carrito));
       this.listar();
     }
+    vaciar1(){
+      this.total = 0;
+      this.cantidadProductos = 0;
+      this.carrito = [];
+      localStorage.setItem("carrito", JSON.stringify(this.carrito));
+      this.listar();
+    }
   
     
     listar() {
@@ -96,6 +103,15 @@ class Producto {
         this.total += producto.precio * producto.cantidad;
         this.cantidadProductos += producto.cantidad;
       }
+      
+      if (this.cantidadProductos > 0) {
+        botonVaciar.style.display = "block";
+        botonComprar.style.display = "block";
+      } else {
+        botonVaciar.style.display = "none";
+        botonComprar.style.display = "none";
+      }
+
       const botonesQuitar = document.querySelectorAll(".btnQuitar");
       for (const boton of botonesQuitar) {
         boton.addEventListener("click", (event) => {
@@ -109,10 +125,6 @@ class Producto {
     }
   }
   
-  
-  const bd = new BaseDeDatos();
-  
-  
   const spanCantidadProductos = document.querySelector("#cantidadProductos");
   const spanTotalCarrito = document.querySelector("#totalCarrito");
   const divProductos = document.querySelector("#productos");
@@ -120,11 +132,29 @@ class Producto {
   const inputBuscar = document.querySelector("#inputBuscar");
   const botonCarrito = document.querySelector("section h1");
   const botonComprar = document.querySelector("#botonComprar");
-  
-  
-  const carrito = new Carrito();
-  
-  
+  const botonVaciar = document.querySelector("#botonVaciar");
+  const botonesCategorias = document.querySelectorAll(".btnCategoria");
+
+  const bd = new BaseDeDatos();
+
+  const carrito = new Carrito();  
+
+  botonesCategorias.forEach((boton) => {
+    boton.addEventListener("click", () => {
+      const categoria = boton.dataset.categoria;
+      //
+      const botonSeleccionado = document.querySelector(".seleccionado");
+      botonSeleccionado.classList.remove("seleccionado");
+      boton.classList.add("seleccionado");
+
+      if( categoria == "Todos"){
+        cargarProductos(bd.traerRegistros());
+      } else {
+        cargarProductos(bd.registrosPorCategoria(categoria));
+      }
+    });
+  });
+
   cargarProductos(bd.traerRegistros());
   
   
@@ -181,7 +211,12 @@ class Producto {
   botonCarrito.addEventListener("click", (event) => {
     document.querySelector("section").classList.toggle("ocultar");
   });
-  
+
+  botonVaciar.addEventListener("click", (event) => {
+  event.preventDefault();
+  carrito.vaciar1();
+  });
+
   botonComprar.addEventListener("click", (event) => {
     event.preventDefault();
     Swal.fire({
@@ -192,4 +227,7 @@ class Producto {
       timer: 1300
     });
     carrito.vaciar();
-  });
+  });    
+
+
+
